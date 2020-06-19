@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 col-md-offset-2">
-            @foreach ($threads as $thread)
+            @forelse ($threads as $thread)
             <div class="card card-default mb-4">
                 <div class="card-header">
                     <div class="level">
@@ -25,7 +25,9 @@
                     <hr>
                 </div>
             </div>
-            @endforeach
+            @empty
+                <p>There are n relevant result at this time</p>
+            @endforelse
         </div>
     </div>
 </div>
