@@ -36,19 +36,45 @@ class ParticipateInForumTest extends TestCase
              ->assertSee($reply->body);
     }
 
-        /** @test */
-        function a_reply_requires_a_body()
-        {
+    /** @test */
+    function a_reply_requires_a_body()
+    {
 
-            $this->withExceptionHandling()->signIn();
+        $this->withExceptionHandling()->signIn();
 
-            $thread = create('App\Thread');
+        $thread = create('App\Thread');
 
-            $reply = make('App\Reply',['body' => null]);
+        $reply = make('App\Reply',['body' => null]);
 
-            $this->post($thread->path().'/replies', $reply->toArray())
-                 ->assertSessionHasErrors('body');
+        $this->post($thread->path().'/replies', $reply->toArray())
+                ->assertSessionHasErrors('body');
 
-        }
+    }
+
+    /** @test */
+    function unauthorized_users_cannot_delete_replies()
+    {
+        $this->withExceptionHandling();
+
+        $reply = create('App\Reply');
+
+        $this->delete("/replies/{$reply->id}")
+            ->assertRedirect('login');
+
+        $this->signIn()
+            ->delete("/replies/{$reply->id}")
+            ->assertStatus(403);
+    }
+
+    /** @test */
+    function authorized_users_can_delete_replies()
+    {
+        $this->signIn();
+        $reply = create('App\Reply', ['user_id' => auth()->id()]);
+
+        $this->delete("/replies/{$reply->id}")->assertStatus(302);
+
+        $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
+    }
 
 }
