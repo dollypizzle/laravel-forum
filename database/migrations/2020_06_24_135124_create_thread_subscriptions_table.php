@@ -13,10 +13,11 @@ class CreateThreadSubscriptionsTable extends Migration
      */
     public function up()
     {
+        // Schema::dropIfExists('thread_subscriptions');
         Schema::create('thread_subscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('thread_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('thread_id');
             $table->timestamps();
             $table->unique(['user_id', 'thread_id']);
 
