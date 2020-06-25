@@ -5,17 +5,24 @@
 <script>
     export default {
         props: ['active'],
+        data: function () {
+            return {
+                button: {
+                    active: this.active
+                }
+            }
+        },
         computed: {
             classes() {
-                return ['btn', this.active ? 'btn-primary' : 'btn-default'];
+                return ['btn', this.button.active ? 'btn-primary' : 'btn-default'];
             }
         },
         methods: {
             subscribe() {
                 axios[
-                    (this.active ? 'delete' : 'post')
+                    (this.button.active ? 'delete' : 'post')
                 ](location.pathname + '/subscriptions');
-                this.active = ! this.active;
+                this.button.active = ! this.button.active;
             }
         }
     }
