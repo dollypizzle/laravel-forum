@@ -35,6 +35,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('header')
 </head>
 <body>
     <div id="app">
@@ -45,6 +46,7 @@
         </main>
 
         <flash message="{{ session('flash') }}"></flash>
+        @yield('scripts')
     </div>
 </body>
 </html>
