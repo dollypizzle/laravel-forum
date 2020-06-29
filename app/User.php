@@ -59,6 +59,11 @@ class User extends Authenticatable
         );
     }
 
+    public function avatar()
+    {
+        return asset($this->avatar_path ?: 'images/avatars/default.png');
+    }
+
     public function visitedThreadCacheKey($thread)
     {
         return sprintf("users.%s.visits.%s", $this->id, $thread->id);
