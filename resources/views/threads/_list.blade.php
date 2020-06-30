@@ -27,7 +27,7 @@
             <div class="body">{{ $thread->body }}</div>
         </div>
         <div class="card-footer bg-primary text-white">
-            {{ $thread->visits() }} Visits
+            {{ $thread->visits()->count() }} Visits
         </div>
     </div>
 @empty
