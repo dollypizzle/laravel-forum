@@ -3,17 +3,17 @@
         <div class="card-header">
             <div class="level">
                 <div class="flex">
-                    <h6>
+                    <h5>
                         <a href="{{ $thread->path() }}">
                             @if (auth()->check() && $thread->hasUpdatesFor(auth()->user()))
                                 <strong class="text-success">
                                     {{ $thread->title }}
-                                </strong class="text-red">
+                                </strong>
                             @else
                                 {{ $thread->title }}
                             @endif
                         </a>
-                    </h6>
+                    </h5>
 
                     <h6>Posted By: <a href="{{ route('profile', $thread->creator) }}">{{ $thread->creator->name }}</a></h6>
                 </div>
@@ -25,8 +25,9 @@
 
         <div class="card-body">
             <div class="body">{{ $thread->body }}</div>
-
-            <hr>
+        </div>
+        <div class="card-footer bg-primary text-white">
+            {{ $thread->visits() }} Visits
         </div>
     </div>
 @empty
