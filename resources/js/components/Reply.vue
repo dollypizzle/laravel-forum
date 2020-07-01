@@ -30,7 +30,7 @@
         </div>
 
         <div class="card-footer level">
-            <div v-if="canUpdate">
+            <div v-if="authorize('updateReply', reply)">
                 <button class="btn btn-xs btn-secondary mr-1" @click="editing = true">Edit</button>
                 <button class="btn btn-xs btn-danger mr-1" @click="destroy">Delete</button>
             </div>
@@ -65,12 +65,6 @@
                 return moment(this.data.created_at).fromNow() + '...';
             },
 
-            signedIn() {
-                return window.App.signedIn;
-            },
-            canUpdate() {
-                return this.authorize(user => this.data.user_id == user.id);
-            }
         },
 
         methods: {
@@ -93,6 +87,8 @@
             },
 
             markBestReply() {
+                // axios.post('/replies/' + this.data.id + '/best');
+                // window.events.$emit('best-reply-selected', this.data.id);
                 this.isBest = true;
             }
         }
