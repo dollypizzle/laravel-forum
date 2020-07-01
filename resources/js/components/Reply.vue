@@ -1,10 +1,10 @@
 <template>
-    <div :id="'reply-'+id" class="card card-default mb-3">
-        <div class="card-header">
+    <div :id="'reply-'+id" class="card mb-3">
+        <div class="card-header" :class="isBest ? 'bg-info' : ''">
             <div class="level">
-                <h6 class="flex">
+                <h6 class="flex" :class="isBest ? 'text-white' : ''">
                     <a :href="'/profiles/'+data.owner.name"
-                        v-text="data.owner.name">
+                        v-text="data.owner.name" :class="isBest ? 'text-white' : ''">
                     </a> said <span v-text="ago"></span>
                 </h6 >
 
@@ -29,9 +29,13 @@
             <div v-else v-html="body"></div>
         </div>
 
-        <div class="card-footer level" v-if="canUpdate">
-            <button class="btn btn-xs mr-1" @click="editing = true">Edit</button>
-            <button class="btn btn-xs btn-danger mr-1" @click="destroy">Delete</button>
+        <div class="card-footer level">
+            <div v-if="canUpdate">
+                <button class="btn btn-xs btn-secondary mr-1" @click="editing = true">Edit</button>
+                <button class="btn btn-xs btn-danger mr-1" @click="destroy">Delete</button>
+            </div>
+
+            <button class="btn btn-xs btn-success ml-auto" @click="markBestReply" v-show="! isBest">Best Reply?</button>
         </div>
     </div>
 </template>
@@ -50,7 +54,9 @@
             return {
                 editing: false,
                 id: this.data.id,
-                body: this.data.body
+                body: this.data.body,
+                isBest: this.data.isBest,
+                reply: this.data
             };
         },
 
@@ -84,6 +90,10 @@
                 axios.delete('/replies/' + this.data.id);
 
                 this.$emit('deleted', this.data.id);
+            },
+
+            markBestReply() {
+                this.isBest = true;
             }
         }
     }
