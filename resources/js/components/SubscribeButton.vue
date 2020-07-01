@@ -14,7 +14,7 @@
         },
         computed: {
             classes() {
-                return ['btn', this.button.active ? 'btn-primary' : 'btn-default'];
+                return ['btn', this.button.active ? 'btn-primary' : 'btn-secondary'];
             }
         },
         methods: {
