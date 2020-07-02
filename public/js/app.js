@@ -8221,6 +8221,11 @@ __webpack_require__.r(__webpack_exports__);
       locked: this.thread.locked
     };
   },
+  computed: {
+    classes: function classes() {
+      return ['btn', this.locked ? 'btn-info' : 'btn-danger'];
+    }
+  },
   methods: {
     toggleLock: function toggleLock() {
       axios[this.locked ? 'delete' : 'post']('/locked-threads/' + this.thread.slug);

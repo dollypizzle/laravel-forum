@@ -134,15 +134,15 @@ class ThreadTest extends TestCase
         });
     }
 
-    /** @test */
-    function a_thread_may_be_locked()
-    {
-        $this->assertFalse($this->thread->locked);
+    // /** @test */
+    // function a_thread_may_be_locked()
+    // {
+    //     $this->assertFalse($this->thread->locked);
 
-        $this->thread->lock();
+    //     $this->thread->lock();
 
-        $this->assertTrue($this->thread->locked);
-    }
+    //     $this->assertTrue($this->thread->locked);
+    // }
 
     // /** @test */
     // function a_thread_records_each_visits()

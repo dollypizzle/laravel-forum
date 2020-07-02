@@ -51,11 +51,11 @@
                             <subscribe-button :active="{{ json_encode($thread->isSubscribedTo) }}" v-if="signedIn"></subscribe-button>
 
                             <button
-                                class="btn btn-secondary"
+                                :class="classes"
                                 v-if="authorize('isAdmin')"
                                 @click="toggleLock"
+                                v-text="locked ? 'Unlock' : 'Lock'">
                                 >
-                                <i class="text-info fas fa-unlock"></i>
                             </button>
                         </p>
                     </div>
