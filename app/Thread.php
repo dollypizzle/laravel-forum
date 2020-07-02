@@ -51,6 +51,12 @@ class Thread extends Model
         return $reply;
     }
 
+    public function lock()
+    {
+        $this->update(['locked' => true]);
+    }
+
+
     public function creator()
     {
         return $this->belongsTo(User::class, 'user_id');
