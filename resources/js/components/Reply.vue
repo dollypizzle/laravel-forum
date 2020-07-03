@@ -22,7 +22,7 @@
                     </div>
 
                     <button class="btn btn-xs btn-primary">Update</button>
-                    <button class="btn btn-xs btn-link" @click="editing = false" type="button">Cancel</button>
+                    <button class="btn btn-xs btn-dark" @click="editing = false" type="button">Cancel</button>
                 </form>
             </div>
 
