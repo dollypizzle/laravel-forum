@@ -34,6 +34,10 @@
                         </div>
 
                         <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6LeJB60ZAAAAALGpNh3C4mIu6n8UzcRrnQPyij29"></div>
+                        </div>
+
+                        <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Publish</button>
                         </div>
                         @if (count($errors))
