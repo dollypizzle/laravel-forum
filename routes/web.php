@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::view('scan', 'search');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/threads', 'ThreadsController@index')->name('threads');
