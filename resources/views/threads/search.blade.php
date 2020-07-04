@@ -23,8 +23,8 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card card-default">
-                        <div class="card-header">
+                    <div class="card card-dark mb-3">
+                        <div class="card-header text-white bg-secondary">
                             Search
                         </div>
 
@@ -35,8 +35,8 @@
                         </div>
                     </div>
 
-                    <div class="card card-default">
-                        <div class="card-header">
+                    <div class="card card-default mb-4 mt-4">
+                        <div class="card-header text-white bg-secondary">
                             Filter By Channel
                         </div>
 
