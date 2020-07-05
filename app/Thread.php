@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
 
+
 class Thread extends Model
 {
     use RecordsActivity, Searchable;
@@ -131,6 +132,12 @@ class Thread extends Model
     {
         return $this->toArray() + ['path' => $this->path()];
     }
+
+    public function getBodyAttribute($body)
+    {
+        return \Purify::clean($body);
+    }
+
 
     // public function visits()
     // {
