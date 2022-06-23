@@ -34,22 +34,6 @@
                 @added="repliesCount++"
                 @removed="repliesCount--"></replies>
 
-                @if(auth()->check())
-
-                <form class="mt-5" method="POST" action="{{ $thread->path() . '/replies' }}">
-                    {{ csrf_field() }}
-
-                    <div class="form-group">
-                        <textarea name="body" id="body" class="form-control" rows="7" placeholder="Have something to say?"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Post</button>
-                </form>
-
-
-                @else
-                <p class="text-center mt-5">Please <a href="{{ route('login') }}"> sign in </a> to participate in this discussion.</p>
-                @endif
             </div>
             <div class="col-md-4">
                 <div class="card mb-5">

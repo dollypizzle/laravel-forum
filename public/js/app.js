@@ -42973,7 +42973,7 @@ var render = function() {
                   expression: "body"
                 }
               ],
-              staticClass: "form-control",
+              staticClass: "form-control mt-5",
               attrs: {
                 name: "body",
                 id: "body",
@@ -42996,14 +42996,14 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-default",
+              staticClass: "btn btn-primary",
               attrs: { type: "submit" },
               on: { click: _vm.addReply }
             },
             [_vm._v("Post")]
           )
         ])
-      : _c("p", { staticClass: "text-center" }, [
+      : _c("p", { staticClass: "text-center mt-5" }, [
           _vm._v("\n        Please "),
           _c("a", { attrs: { href: "/login" } }, [_vm._v("sign in")]),
           _vm._v(" to participate in this\n        discussion.\n    ")
