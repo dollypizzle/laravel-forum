@@ -6,6 +6,8 @@
 
 require('./bootstrap');
 
+require('@fortawesome/fontawesome-free/js/all.js');
+
 window.Vue = require('vue');
 
 /**
@@ -21,6 +23,8 @@ window.Vue = require('vue');
 
 Vue.component('flash', require('./components/Flash.vue').default);
 Vue.component('reply', require('./components/Reply.vue').default);
+Vue.component('favorite', require('./components/Favorite.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
