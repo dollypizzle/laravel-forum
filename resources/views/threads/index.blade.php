@@ -8,11 +8,11 @@
             <div class="card card-default mb-4">
                 <div class="card-header">
                     <div class="level">
-                        <h5 class="flex">
+                        <h6 class="flex">
                             <a href="{{ $thread->path() }}">
                                 {{ $thread->title }}
                             </a>
-                        </h5>
+                        </h6>
                         <a href="{{ $thread->path() }}">
                             <strong>{{$thread->replies_count }} {{ Str::plural('reply', $thread->replies_count) }}</strong>
                         </a>
