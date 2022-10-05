@@ -10,7 +10,7 @@
                     <div class="level">
                         <h6 class="flex">
                             <a href="{{ $thread->path() }}">
-                                @if ($thread->hasUpdatesFor(auth()->user()))
+                                @if (auth()->check() && $thread->hasUpdatesFor(auth()->user()))
                                     <strong class="text-success">
                                         {{ $thread->title }}
                                     </strong class="text-red">
