@@ -18,7 +18,7 @@ class RepliesController extends Controller
         return $thread->replies()->paginate(20);
     }
 
-    public function store($channelId,Thread $thread, Spam $spam)
+    public function store($channelId,Thread $thread)
     {
         $this->validateReply();
 
@@ -37,7 +37,7 @@ class RepliesController extends Controller
     }
 
 
-    public function update(Reply $reply, Spam $spam)
+    public function update(Reply $reply)
     {
         $this->authorize('update', $reply);
 
