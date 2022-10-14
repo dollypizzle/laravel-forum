@@ -27,9 +27,9 @@
             <div class="body">{{ $thread->body }}</div>
         </div>
         <div class="card-footer bg-primary text-white">
-            {{ $thread->visits()->count() }} Visits
+            {{ $thread->visits }} Visits
         </div>
     </div>
 @empty
-    <p>There are n relevant result at this time</p>
+    <p>There are no relevant result at this time</p>
 @endforelse
