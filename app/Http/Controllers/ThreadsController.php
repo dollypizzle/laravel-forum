@@ -8,6 +8,8 @@ use App\Trending;
 use App\Filters\ThreadFilters;
 use GuzzleHttp\RedirectMiddleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class ThreadsController extends Controller
 {
@@ -64,7 +66,8 @@ class ThreadsController extends Controller
             'user_id' => auth()->id(),
             'channel_id' => request('channel_id'),
             'title' => request('title'),
-            'body'  => request('body')
+            'body'  => request('body'),
+            'slug' => request('title')
          ]);
 
          return redirect($thread->path())
