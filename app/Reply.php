@@ -65,4 +65,9 @@ class Reply extends Model
         );
     }
 
+    public function isBest()
+    {
+        return $this->thread->best_reply_id == $this->id;
+    }
+
 }
