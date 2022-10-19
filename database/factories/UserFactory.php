@@ -52,7 +52,8 @@ $factory->define(App\Thread::class, function (Faker $faker) {
         'title' => $title,
         'body' => $faker->paragraph,
         'visits' => 0,
-        'slug' => Str::slug($title)
+        'slug' => Str::slug($title),
+        'locked' => false
     ];
 });
 
