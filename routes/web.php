@@ -30,6 +30,7 @@ Route::post('/threads', 'ThreadsController@store')->middleware('must-be-confirme
 Route::get('/threads/{channel}', 'ThreadsController@index');
 // Route::resource('/threads', 'ThreadsController');
 
+Route::post('locked-threads/{thread}', 'LockedThreadsController@store')->name('locked-threads.store')->middleware('admin');
 
 Route::get('/threads/{channel}/{thread}/replies', 'RepliesController@index');
 Route::post('threads/{channel}/{thread}/replies', 'RepliesController@store');
