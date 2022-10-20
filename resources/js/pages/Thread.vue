@@ -12,6 +12,15 @@
             };
         },
 
+        computed: {
+            classes() {
+                return [
+                    'btn',
+                    this.locked ? 'btn-info' : 'btn-danger'
+                ];
+            }
+        },
+
         methods: {
             toggleLock () {
                 axios[
