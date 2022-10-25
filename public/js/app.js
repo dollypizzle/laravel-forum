@@ -8218,7 +8218,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       repliesCount: this.thread.replies_count,
-      locked: this.thread.locked
+      locked: this.thread.locked,
+      title: this.thread.title,
+      body: this.thread.body,
+      form: {},
+      editing: false
     };
   },
   computed: {
@@ -66554,7 +66558,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-xs btn-link",
+                      staticClass: "btn btn-xs btn-dark",
                       attrs: { type: "button" },
                       on: {
                         click: function($event) {

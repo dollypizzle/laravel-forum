@@ -8,7 +8,11 @@
         data() {
             return {
                 repliesCount: this.thread.replies_count,
-                locked: this.thread.locked
+                locked: this.thread.locked,
+                title: this.thread.title,
+                body: this.thread.body,
+                form: {},
+                editing: false
             };
         },
 
