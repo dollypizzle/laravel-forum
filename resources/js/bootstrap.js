@@ -1,4 +1,5 @@
 window._ = require('lodash');
+import InstantSearch from 'vue-instantsearch';
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -25,6 +26,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.Vue = require('vue');
 window.events = new Vue();
+
+Vue.use(InstantSearch);
 
 let authorizations = require('./authorizations');
 
