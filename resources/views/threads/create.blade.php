@@ -29,8 +29,8 @@
                         </div>
 
                         <div class="form-group">
-                                <label for="body">Body:</label>
-                                <textarea name="body" rows="8" class="form-control" id="body" required>{{ old('body') }}</textarea>
+                            <label for="body">Body:</label>
+                            <wysiwyg name="body"></wysiwyg>
                         </div>
 
                         <div class="form-group">
